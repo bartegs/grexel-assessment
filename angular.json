@@ -29,8 +29,15 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": ["src/scss"]
+            },
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/scss/colors.scss",
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              }
             ],
             "scripts": []
           },
@@ -90,6 +97,9 @@
               "src/assets"
             ],
             "styles": [
+              {
+                "input": "node_modules/@progress/kendo-theme-default/dist/all.css"
+              },
               "src/styles.scss"
             ],
             "scripts": []

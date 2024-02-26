@@ -1,0 +1,68 @@
+<main>
+  <h1 class="upcoming-auctions-header">Upcoming Auctions</h1>
+  <div
+    class="auctions-list"
+    *ngIf="auctions$ | async as auctions; else loading"
+  >
+    <kendo-grid
+      [kendoGridBinding]="auctions"
+      [data]="auctions"
+      [sortable]="true"
+      [filterable]="true"
+      [pageable]="true"
+      [selectable]="true"
+      [pageSize]="20"
+    >
+      <kendo-grid-column
+        title="Auction Name"
+        field="AuctionName"
+        [class]="'first-column-cell'"
+        [width]="100"
+      />
+      <kendo-grid-column
+        title="Opening Date"
+        field="StartDate"
+        format="yyyy-MM-dd"
+        filter="date"
+        [width]="100"
+      />
+      <kendo-grid-column
+        title="Closing Date"
+        field="EndDate"
+        format="yyyy-MM-dd"
+        filter="date"
+        [width]="100"
+      />
+      <kendo-grid-column
+        title="Volume Offered"
+        field="AuctionItem.Volume"
+        filter="numeric"
+        [width]="100"
+      />
+      <kendo-grid-column
+        title="Production Start Date"
+        field="AuctionItem.ProductionPeriodStart"
+        format="yyyy-MM-dd"
+        filter="date"
+        [width]="100"
+      />
+      <kendo-grid-column
+        title="Production End Date"
+        field="AuctionItem.ProductionPeriodEnd"
+        format="yyyy-MM-dd"
+        filter="date"
+        [width]="100"
+      />
+      <kendo-grid-column
+        title="Fuel, Technology"
+        field="AuctionItem.TechnologyCode"
+        [width]="100"
+      />
+    </kendo-grid>
+  </div>
+  <ng-template #loading>
+    <div class="loading">
+      <kendo-loader type="converging-spinner" size="large"> </kendo-loader>
+    </div>
+  </ng-template>
+</main>

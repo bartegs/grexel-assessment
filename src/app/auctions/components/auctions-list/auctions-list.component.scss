@@ -1,0 +1,47 @@
+@import "colors";
+
+main {
+  height: 100vh;
+  margin: 0 20px;
+  padding: 20px 0;
+
+  @media screen and (min-width: 992px) {
+    margin: 0 100px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin: 0 300px;
+  }
+}
+
+.upcoming-auctions-header {
+  margin-bottom: 20px;
+}
+
+.auctions-list {
+  & kendo-grid {
+    // screen height - top & bottom padding - header
+    max-height: calc(100vh - 40px - 48px);
+  }
+
+  & tr.k-table-row.k-selected td.k-table-td {
+    background-color: $light-blue;
+  }
+
+  .first-column-cell {
+    color: $dark-blue-2;
+    font-weight: bold;
+  }
+}
+
+.loading {
+  // screen height - top & bottom padding - header
+  height: calc(100vh - 40px - 48px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.k-loader-primary {
+  color: $dark-blue;
+}

@@ -1,0 +1,56 @@
+@import "colors";
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $grey-5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 20px;
+  width: 100%;
+  min-height: 50%;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: $white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+  @media screen and (min-width: 992px) {
+    width: 30%;
+    min-height: 40%;
+  }
+}
+
+.links {
+  text-align: center;
+}
+
+.link {
+  color: $dark-blue-2;
+  font-size: 24px;
+  text-decoration: none;
+
+  &:hover {
+    color: $dark-blue;
+  }
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 150px;
+}
+
+.footer {
+  text-align: center;
+}
